@@ -19,7 +19,43 @@
       <h2 class="title">FAQs</h2>
 
       <div id="faq-list">
-        <!-- listlar -->
+        <!-- list -->
+        <!-- <div class="question">
+          <h3>${questionText}</h3>
+          <i class="fa-solid fa-arrow-down"></i>
+        </div>
+        <div class="answer">
+          <p>${answerText}</p>
+          <div class="btn-wrap">
+            <button class="edit-btn">
+              <i class="fa-solid fa-pen-to-square"></i> Edit
+            </button>
+            <button class="delete-btn">
+              <i class="fa-solid fa-trash"></i> Delete
+            </button>
+          </div>
+        </div> -->
+        <!-- list -->
+
+        <!-- edit -->
+
+        <!-- <div class="question">
+          <h3>${questionText}</h3>
+          <i class="fa-solid fa-arrow-down"></i>
+        </div>
+        <div class="answer">
+          <p>${answerText}</p>
+          <div class="btn-wrap">
+            <button class="edit-btn">
+              <i class="fa-solid fa-pen-to-square"></i> Edit
+            </button>
+            <button class="delete-btn">
+              <i class="fa-solid fa-trash"></i> Delete
+            </button>
+          </div>
+        </div> -->
+
+        <!-- edit -->
       </div>
 
       <div class="add-wrap">
@@ -50,16 +86,15 @@
     </div>
 
     <script>
-      const btn = document.getElementById("theme-btn");
+      const themeBtn = document.getElementById("theme-toggle");
 
-      btn.addEventListener("click", () => {
-        document.body.classList.toggle("light");
+      themeBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        document.body.classList.toggle("light-mode");
 
-        if (document.body.classList.contains("light")) {
-          btn.innerHTML = '<i class="fa-solid fa-sun"></i>';
-        } else {
-          btn.innerHTML = '<i class="fa-solid fa-moon"></i>';
-        }
+        themeBtn.innerHTML = document.body.classList.contains("light-mode")
+          ? '<i class="fa-solid fa-moon"></i>'
+          : '<i class="fa-solid fa-sun"></i>';
       });
     </script>
 
