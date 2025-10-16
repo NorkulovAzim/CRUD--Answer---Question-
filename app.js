@@ -8,6 +8,7 @@ const questionInput = document.getElementById("question-input");
 const answerInput = document.getElementById("answer-input");
 
 
+// ADD (open modal)
 addBtn.addEventListener("click", () => {
   modal.style.display = "flex";
   questionInput.value = "";
