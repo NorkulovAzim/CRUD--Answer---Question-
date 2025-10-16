@@ -4,51 +4,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FAQS</title>
+  <title>FAQ CRUD</title>
   <link rel="stylesheet" href="./style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
 </head>
 
 <body>
   <section>
+    <button id="theme-toggle" class="theme-btn"><i class="fa-solid fa-moon"></i></button>
     <h2 class="title">FAQs</h2>
 
-    <div class="faq">
-      <div class="question">
-        <h3>Answer and Question</h3>
-        <i class="fa-solid fa-arrow-down"></i>
-      </div>
-
-      <div class="answer">
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, sint.</p>
-      </div>
+    <div id="faq-list">
+      <!-- listlar -->
     </div>
 
-    <div class="faq">
-      <div class="question">
-        <h3>Answer and Question</h3>
-        <i class="fa-solid fa-arrow-down"></i>
-      </div>
-
-      <div class="answer">
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, sint.</p>
-      </div>
-    </div>
-
-
-    <div class="faq">
-      <div class="question">
-        <h3>Answer and Question</h3>
-        <i class="fa-solid fa-arrow-down"></i>
-      </div>
-
-      <div class="answer">
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, sint.</p>
-      </div>
+    <div class="add-wrap">
+      <button class="add-btn" id="add-btn">Add your question</button>
     </div>
   </section>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <h3>Add New FAQ</h3>
+      <label>Question:</label>
+      <input type="text" id="question-input" placeholder="Enter your question">
+      <label>Answer:</label>
+      <textarea id="answer-input" rows="3" placeholder="Enter the answer"></textarea>
+      <div class="modal-buttons">
+        <button id="save-btn">Save</button>
+        <button id="cancel-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    const btn = document.getElementById("theme-btn");
+
+    btn.addEventListener("click", () => {
+      document.body.classList.toggle("light");
+
+      if (document.body.classList.contains("light")) {
+        btn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+      } else {
+        btn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+      }
+    });
+  </script>
+
 
   <script src="./app.js"></script>
 </body>
